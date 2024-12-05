@@ -112,7 +112,6 @@ public class IntegrationWithRestFullBooker {
 
         validatableResponse = response.then().log().all();
         validatableResponse.statusCode(200);
-
     }
 
     @Test(priority = 2)
@@ -125,8 +124,6 @@ public class IntegrationWithRestFullBooker {
 
         String firstname = response.jsonPath().getString("firstname");
         //Assert.assertEquals(firstname,"Anshul");
-
-
     }
 
     @Test(priority = 3)
@@ -155,7 +152,7 @@ public class IntegrationWithRestFullBooker {
         requestSpecification.basePath("/booking/"+bookingId);
         response = requestSpecification.when().log().all().get();
         requestSpecification.then().log().all().statusCode(404);
-
+        System.out.println(bookingId);
     }
 
 
