@@ -1,10 +1,10 @@
-package com.srikanth.Post;
+package com.srikanth.post;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
-public class createBooking {
+public class CreateBooking {
 
     @Test
     public void createBooking() {
@@ -23,14 +23,13 @@ public class createBooking {
 
         RestAssured
                 .given()
-                .baseUri("https://restful-booker.herokuapp.com")
-                .basePath("/booking")
-                .contentType(ContentType.JSON)
-                .body(payload)
+                    .baseUri("https://restful-booker.herokuapp.com")
+                    .basePath("/booking")
+                    .contentType(ContentType.JSON)
+                    .body(payload)
                 .when().log().all()
-                .post()
+                    .post()
                 .then().log().all()
-                .statusCode(200);
-
+                    .statusCode(200);
     }
 }

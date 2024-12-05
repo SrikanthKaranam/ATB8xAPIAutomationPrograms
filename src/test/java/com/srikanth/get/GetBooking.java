@@ -1,10 +1,9 @@
-package com.srikanth.Get;
+package com.srikanth.get;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
-public class getBooking {
+public class GetBooking {
 
     @Test
     public void getBookingId(){
